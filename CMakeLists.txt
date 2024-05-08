@@ -19,7 +19,7 @@ pico_sdk_init()
 
 # Add executable. Default name is the project name, version 0.1
 
-add_executable(linkList linkList.cpp node.cpp ssd1306.c AudioFFT.cpp)
+add_executable(linkList linkList.cpp  ssd1306.c AudioFFT.cpp)
 
 pico_set_program_name(linkList "linkList")
 pico_set_program_version(linkList "0.1")
@@ -28,7 +28,7 @@ pico_enable_stdio_uart(linkList 1)
 pico_enable_stdio_usb(linkList 0)
 
 # Add the standard library to the build
-target_link_libraries(linkList pico_stdlib hardware_adc hardware_i2c  hardware_vreg)
+target_link_libraries(linkList pico_stdlib hardware_adc hardware_i2c  hardware_vreg hardware_dma)
 
 pico_add_extra_outputs(linkList)
 
